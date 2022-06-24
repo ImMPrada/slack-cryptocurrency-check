@@ -1,4 +1,5 @@
 import { DefineFunction, Manifest, Schema } from "deno-slack-sdk/mod.ts";
+import { GetListOfMarkets } from "./marketRequestsFuncDeclarations.ts";
 
 export const ReverseFunction = DefineFunction({
   callback_id: "reverse",
@@ -29,7 +30,7 @@ export default Manifest({
   name: "slack-cryptocurrency-check",
   description: "Reverse a string",
   icon: "assets/icon.png",
-  functions: [ReverseFunction],
+  functions: [ReverseFunction, GetListOfMarkets],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "chat:write.public"],
 });
